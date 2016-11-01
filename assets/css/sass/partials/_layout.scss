@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Hind:400,600,500,300);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $gray-light;
+  font-family: "Hind", "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main-container {
+  margin: 20px auto 40px;
+  max-width: 1000px;
+
+  @include clearAfter;
+}
+
+.light-container {
+  animation: fadein both 0.5s;
+  background: $white;
+  color: $gray-dark;
+  padding: 50px 80px 30px;
+}
+
+a.link {
+  border-bottom: 1px solid $gray-dark-40;
+  color: $gray-dark;
+  text-decoration: none;
+  transition: 100ms;
+
+  &.light {
+    border-bottom-color: $gray-light-40;
+    color: $gray-light;
+  }
+}
+
+a.button {
+  background-color: $blue-80;
+  border-radius: 2px;
+  color: $white-80;
+  display: inline-block;
+  font-size: $f-size-sm;
+  font-weight: 500;
+  padding: 10px 10px;
+  text-decoration: none;
+  transition: 100ms;
+
+  &:hover {
+    background-color: $blue;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
+
+@keyframes fadein{
+  from {
+    opacity: 0;
+    @include transform(translateY(20px));
+  }
+  to {
+    opacity: 1;
+    @include transform(translateY(0px));
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 10px;
+  }
+
+  .main-container {
+    margin: 0 auto;
+  }
+
+  .light-container {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 850px) {
+  .light-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .light-container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
